@@ -281,3 +281,7 @@ html.samsung .btn.plein{background:#1d160e;color:var(--or);border-color:var(--or
   .hero picture img{top:20%;height:92%;object-position:center top;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 32%);mask-image:linear-gradient(180deg,transparent 0%,#000 32%)}
   .hero::after{background:linear-gradient(180deg,rgba(10,8,6,0) 0%,rgba(10,8,6,0) 80%,var(--fond) 100%)}
 }
+
+/* Verre liquide (assets/verre-liquide.js, Chrome et Samsung Internet) : teinte plus légère pour voir la courbure */
+.entete.verre-liquide,.segment.verre-liquide{background:rgba(24,19,13,.5)}
+.btn.verre.verre-liquide{background:rgba(24,19,13,.4)}
