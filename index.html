@@ -56,9 +56,9 @@ html.samsung .nav a.appel{background:transparent;color:var(--or)}
 
 /* Accueil */
 .accueil{position:relative;min-height:100svh;display:flex;align-items:center;isolation:isolate;overflow:hidden}
-.accueil .photo{position:absolute;top:0;right:0;bottom:0;width:62%;z-index:-1}
-.accueil .photo img{width:100%;height:100%;object-fit:cover}
-.accueil .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--noir) 0%,rgba(10,8,6,.5) 32%,rgba(10,8,6,0) 62%),linear-gradient(0deg,var(--noir) 0%,rgba(10,8,6,0) 22%)}
+.accueil .photo{position:absolute;inset:0;z-index:-1}
+.accueil .photo img{width:100%;height:100%;object-fit:cover;object-position:80% 60%}
+.accueil .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,8,6,.85) 0%,rgba(10,8,6,.55) 35%,rgba(10,8,6,0) 60%),linear-gradient(0deg,var(--noir) 0%,rgba(10,8,6,0) 22%)}
 .accueil .texte{max-width:540px;padding:120px 0}
 .lieu{color:var(--or);font-size:16px;font-weight:500;margin-bottom:18px}
 .accueil h1{margin-bottom:22px}
@@ -66,7 +66,7 @@ html.samsung .nav a.appel{background:transparent;color:var(--or)}
 .actions{display:flex;gap:12px;flex-wrap:wrap}
 @media(max-width:760px){
   .accueil{align-items:flex-end}
-  .accueil .photo{width:100%;bottom:auto;height:60%}
+  .accueil .photo{bottom:auto;height:60%}
   .accueil .photo::after{background:linear-gradient(0deg,var(--noir) 0%,rgba(10,8,6,.2) 50%,rgba(10,8,6,0) 100%)}
   .accueil .texte{padding:0 0 56px}
   .actions .bouton{flex:1;padding:0 12px}
@@ -167,7 +167,7 @@ footer a:hover{color:var(--blanc)}
 
 <main>
   <section class="accueil" id="accueil" style="padding:0">
-    <div class="photo"><img src="img/platines.jpg" alt="Platines de DJ devant une salle de réception éclairée par des lustres" fetchpriority="high"></div>
+    <div class="photo"><picture><source media="(min-width:761px)" srcset="img/platines-large.jpg"><img src="img/platines.jpg" alt="Platines de DJ devant une salle de réception éclairée par des lustres" fetchpriority="high"></picture></div>
     <div class="cadre">
       <div class="texte">
         <p class="lieu">DJ de mariage à Lyon et en Rhône-Alpes</p>
