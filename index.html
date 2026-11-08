@@ -161,6 +161,14 @@ footer .cadre{display:flex;justify-content:space-between;gap:calc(16*var(--u));f
 footer a{text-decoration:none}
 footer a:hover{color:var(--blanc)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+@media(min-width:1100px){
+  .carte{width:calc((100vw - 2*var(--marge) - 40*var(--u))/3)}
+  .carte .media{aspect-ratio:4/4.4}
+  .offre figure img{aspect-ratio:5/4}
+  .offre{gap:calc(96*var(--u))}
+  .offre li p{max-width:none}
+}
 </style>
 <script>if(/SamsungBrowser/i.test(navigator.userAgent))document.documentElement.classList.add('samsung')</script>
 </head>
@@ -290,6 +298,7 @@ footer a:hover{color:var(--blanc)}
     i=Math.min(cartes.length-1,Math.round(c.scrollLeft/pas()));
     if(c.scrollLeft+c.clientWidth>=c.scrollWidth-4)i=cartes.length-1;
     prec.disabled=c.scrollLeft<4; suiv.disabled=c.scrollLeft+c.clientWidth>=c.scrollWidth-4;
+    document.querySelector('.fleches').style.visibility=c.scrollWidth<=c.clientWidth+4?'hidden':'';
     const v=videos[i]; btn.hidden=!v;
     videos.forEach((x,k)=>{if(x&&k!==i){x.pause();x.currentTime=0}});
     if(v){ if(visible&&!pause&&!v.ended){v.play().catch(()=>{});etat('pause','Mettre en pause')} else if(v.ended){etat('rejouer','Rejouer')} else etat('lecture','Lire la vidéo') }
@@ -300,6 +309,7 @@ footer a:hover{color:var(--blanc)}
     if(pause){v.pause();etat('lecture','Lire la vidéo')}else{v.play();etat('pause','Mettre en pause')}});
   prec.addEventListener('click',()=>c.scrollBy({left:-pas(),behavior:'smooth'}));
   suiv.addEventListener('click',()=>c.scrollBy({left:pas(),behavior:'smooth'}));
+  addEventListener('resize',maj);
   let t;c.addEventListener('scroll',()=>{clearTimeout(t);t=setTimeout(maj,90)},{passive:true});
   new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(!visible)videos.forEach(v=>v&&v.pause());maj()},{threshold:.4}).observe(c);
   maj();
