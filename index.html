@@ -28,8 +28,9 @@ html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{background:var(--noir);color:var(--blanc);font-family:"Manrope",system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,video{display:block;max-width:100%}
 a{color:inherit}
-.cadre{width:min(1240px,100% - 40px);margin-inline:auto}
-@media(min-width:760px){.cadre{width:min(1240px,100% - 112px)}}
+.cadre{margin-inline:var(--marge)}
+:root{--marge:20px}
+@media(min-width:760px){:root{--marge:clamp(40px,4.5vw,80px)}}
 h1,h2{font-weight:500;letter-spacing:-.03em;line-height:1.08}
 h1{font-size:clamp(36px,4.6vw,54px)}
 h2{font-size:clamp(30px,3.4vw,44px)}
@@ -86,8 +87,7 @@ section{padding:120px 0}
 @media(max-width:860px){.entree-section{grid-template-columns:1fr;gap:16px;margin-bottom:36px}}
 
 /* Réalisations : carrousel vidéo façon Apple */
-.carrousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-inline:max(20px,calc((100vw - 1240px)/2));scroll-padding-inline:max(20px,calc((100vw - 1240px)/2))}
-@media(min-width:760px){.carrousel{padding-inline:max(56px,calc((100vw - 1240px)/2));scroll-padding-inline:max(56px,calc((100vw - 1240px)/2))}}
+.carrousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-inline:var(--marge);scroll-padding-inline:var(--marge)}
 .carrousel::-webkit-scrollbar{display:none}
 .carte{flex:0 0 auto;width:min(400px,78vw);scroll-snap-align:start}
 .carte .media{position:relative;aspect-ratio:4/5.6;border-radius:20px;overflow:hidden;background:var(--noir-3)}
