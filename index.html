@@ -3,108 +3,408 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0a0806">
-<meta name="color-scheme" content="dark only">
-<title>La Cuillère d'Or · Restaurant halal à Audincourt</title>
-<meta name="description" content="La Cuillère d'Or, restaurant familial 100 % halal à Audincourt. Couscous, tajines, pastillas, pizzas et brunch du dimanche. Réservation au 03 81 31 35 06.">
-<meta property="og:title" content="La Cuillère d'Or · Restaurant halal à Audincourt">
-<meta property="og:description" content="La Cuillère d'Or, restaurant familial 100 % halal à Audincourt. Couscous, tajines, pastillas, pizzas et brunch du dimanche. Réservation au 03 81 31 35 06.">
-<meta property="og:image" content="img/fondordi.jpg">
-<link rel="icon" href="img/favicon.png">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script>document.documentElement.classList.add('js'); if (/SamsungBrowser/i.test(navigator.userAgent)) document.documentElement.classList.add('samsung');</script>
+<title>DJ Hako · DJ de mariage à Lyon et en Rhône-Alpes</title>
+<meta name="description" content="DJ Hako anime votre mariage à Lyon et en Rhône-Alpes : DJ et animation, negafa complète, option panda et voiture de prestige. Vérifiez votre date.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0907">
+<meta property="og:title" content="DJ Hako · DJ de mariage à Lyon">
+<meta property="og:description" content="Une seule soirée. Aucun droit à l'erreur. DJ, animation, negafa et voiture de prestige pour votre mariage.">
+<meta property="og:image" content="img/platines.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0907'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23d8b56f' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23d8b56f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "DJ Hako",
+  "description": "DJ et animation de mariage, negafa complète, option panda et voiture de prestige.",
+  "telephone": "+33659485264",
+  "areaServed": ["Lyon", "Rhône-Alpes"],
+  "image": "img/platines.jpg",
+  "sameAs": ["https://www.instagram.com/djhakomariage/"]
+}
+</script>
+<style>
+:root{
+  --fond:#0b0907; --fond-2:#14110d; --ligne:rgba(244,236,222,.12);
+  --texte:#f4ecde; --doux:rgba(244,236,222,.72); --or:#d8b56f; --or-fonce:#b8944f;
+  --rayon:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--fond);color:var(--texte);font-family:"Manrope",system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.cadre{width:min(1200px,100% - 32px);margin-inline:auto}
+@media(min-width:720px){.cadre{width:min(1200px,100% - 96px)}}
+
+h1,h2,h3{font-weight:500;letter-spacing:-.035em;line-height:1.05}
+h1{font-size:clamp(36px,5.2vw,56px)}
+h2{font-size:clamp(30px,3.6vw,44px)}
+h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
+.sur{color:var(--or);font-size:15px;font-weight:500;margin-bottom:14px}
+.chapo{color:var(--doux);max-width:34ch}
+
+.bouton{display:inline-flex;align-items:center;gap:10px;background:var(--or);color:#1a140b;text-decoration:none;font-weight:500;font-size:17px;padding:15px 26px;border-radius:12px;border:1px solid var(--or);transition:background .2s}
+.bouton:hover{background:#e6c784}
+.bouton.ligne{background:transparent;color:var(--texte);border-color:var(--ligne)}
+.bouton.ligne:hover{border-color:var(--or);color:var(--or)}
+html.samsung .bouton:not(.ligne){background:#15110b;color:var(--or);border-color:var(--or)}
+
+/* Barre du haut */
+.entete{position:fixed;inset:16px 16px auto;z-index:20;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+.entete>*{pointer-events:auto}
+.logo{font-weight:600;font-size:19px;letter-spacing:-.02em;text-decoration:none;padding:8px 12px}
+.nav{display:flex;gap:4px;padding:5px;border-radius:999px;background:rgba(20,17,13,.55);border:1px solid var(--ligne);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%)}
+.nav.verre-liquide{background:rgba(20,17,13,.35)}
+.nav a{text-decoration:none;font-size:15px;font-weight:500;padding:9px 16px;border-radius:999px;color:var(--doux);transition:color .2s,background .2s}
+.nav a:hover,.nav a.actif{color:var(--texte);background:rgba(244,236,222,.1)}
+.nav .appel{display:none}
+@media(max-width:760px){
+  .nav a:not(.appel){display:none}
+  .nav .appel{display:block;color:var(--texte)}
+}
+
+/* Accueil */
+.accueil{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.accueil .image{position:absolute;inset:0 0 0 auto;width:min(62%,980px);z-index:-1}
+.accueil .image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.accueil .image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--fond) 0%,rgba(11,9,7,.55) 30%,rgba(11,9,7,0) 60%),linear-gradient(0deg,var(--fond) 0%,rgba(11,9,7,0) 25%)}
+.accueil .texte{padding:140px 0 170px;max-width:560px}
+.accueil h1{margin-bottom:22px}
+.accueil .chapo{margin-bottom:34px}
+.contacts{position:absolute;left:0;right:0;bottom:28px}
+.carte-contact{display:inline-flex;gap:44px;padding:16px 22px;border-radius:var(--rayon);background:rgba(20,17,13,.5);border:1px solid var(--ligne);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.carte-contact.verre-liquide{background:rgba(20,17,13,.3)}
+.carte-contact a{text-decoration:none;font-size:16px;line-height:1.35}
+.carte-contact b{display:block;font-weight:600}
+.carte-contact span{color:var(--doux)}
+@media(max-width:760px){
+  .accueil{align-items:flex-end}
+  .accueil .image{width:100%;height:62%;inset:0 0 auto 0}
+  .accueil .image::after{background:linear-gradient(0deg,var(--fond) 2%,rgba(11,9,7,.35) 45%,rgba(11,9,7,.1) 100%)}
+  .accueil .texte{padding:0 0 150px}
+  .carte-contact{gap:28px;padding:14px 18px}
+}
+
+section{padding:110px 0}
+@media(max-width:760px){section{padding:76px 0}}
+.titre-section{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.titre-section .chapo{max-width:40ch}
+
+/* Prestations */
+.prestations{background:var(--fond-2)}
+.liste{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.liste ul{list-style:none}
+.liste li{padding:26px 0;border-top:1px solid var(--ligne);display:grid;grid-template-columns:1fr auto;gap:6px 24px}
+.liste li:last-child{border-bottom:1px solid var(--ligne)}
+.liste li p{grid-column:1/-1;color:var(--doux);font-size:17px;max-width:46ch}
+.liste li .tag{color:var(--or);font-size:15px;align-self:center}
+.liste figure{position:sticky;top:110px;border-radius:var(--rayon);overflow:hidden;aspect-ratio:4/5}
+.liste figure img{width:100%;height:100%;object-fit:cover}
+@media(max-width:860px){.liste{grid-template-columns:1fr;gap:36px}.liste figure{position:static;aspect-ratio:4/3}}
+
+/* Mariages */
+.mariages{background:var(--fond)}
+.carrousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-inline:max(16px,calc((100vw - 1200px)/2));scroll-padding-inline:max(16px,calc((100vw - 1200px)/2))}
+@media(min-width:720px){.carrousel{padding-inline:max(48px,calc((100vw - 1200px)/2));scroll-padding-inline:max(48px,calc((100vw - 1200px)/2))}}
+.carrousel::-webkit-scrollbar{display:none}
+.diapo{flex:0 0 auto;width:min(380px,74vw);scroll-snap-align:start;transition:opacity .5s}
+.diapo .media{position:relative;aspect-ratio:9/14;border-radius:20px;overflow:hidden;background:#000}
+.diapo .media img,.diapo .media video{width:100%;height:100%;object-fit:cover}
+.diapo figcaption{margin-top:16px;font-size:17px;line-height:1.45;color:var(--doux);max-width:34ch}
+.diapo figcaption b{color:var(--texte);font-weight:600}
+.commandes{display:flex;justify-content:space-between;align-items:center;margin-top:28px}
+.ronds{display:flex;gap:10px}
+.rond{position:relative;width:52px;height:52px;border-radius:50%;border:0;background:rgba(244,236,222,.1);color:var(--texte);display:grid;place-items:center;cursor:pointer;transition:background .2s,opacity .2s}
+.rond:hover{background:rgba(244,236,222,.18)}
+.rond:disabled{opacity:.35;cursor:default}
+.rond svg{width:20px;height:20px}
+.rond .anneau{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.rond .anneau circle{fill:none;stroke:var(--or);stroke-width:2.5;stroke-dasharray:150.8;stroke-dashoffset:150.8}
+.lecture[hidden]{display:none}
+.points{display:flex;gap:8px;align-items:center}
+.points span{width:7px;height:7px;border-radius:9px;background:rgba(244,236,222,.3);transition:all .3s}
+.points span.actif{width:22px;background:var(--texte)}
+.insta{margin-top:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--doux)}
+
+
+/* Confiance */
+.confiance{border-top:1px solid var(--ligne)}
+.preuves{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.preuve{padding:26px 28px;border-radius:var(--rayon);background:var(--fond-2);border:1px solid var(--ligne)}
+.preuve b{display:block;font-size:28px;font-weight:500;letter-spacing:-.03em;color:var(--or);line-height:1.2;margin-bottom:6px}
+.preuve span{color:var(--doux);font-size:17px}
+.avis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.carte-avis{padding:28px;border-radius:var(--rayon);border:1px solid var(--ligne);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.carte-avis blockquote{font-size:19px;line-height:1.5}
+.carte-avis figcaption b{display:block;font-weight:600}
+.carte-avis figcaption span{color:var(--doux);font-size:15px}
+.carte-avis.a-completer{border-style:dashed;border-color:rgba(216,181,111,.45)}
+.carte-avis.a-completer blockquote{color:var(--doux);font-style:italic}
+@media(max-width:860px){.preuves,.avis{grid-template-columns:1fr}}
+
+/* Déroulé */
+.deroule ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.deroule li{padding:28px;border:1px solid var(--ligne);border-radius:var(--rayon)}
+.deroule li h3{margin-bottom:10px}
+.deroule li p{color:var(--doux);font-size:17px}
+@media(max-width:860px){.deroule ol{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{position:relative;isolation:isolate;overflow:hidden}
+.contact .fond{position:absolute;inset:0;z-index:-1}
+.contact .fond img{width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.5}
+.contact .fond::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--fond) 0%,rgba(11,9,7,.6) 35%,var(--fond) 100%)}
+.contact .grille{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact h2{margin-bottom:18px}
+.contact .chapo{margin-bottom:28px}
+.direct{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+form{padding:28px;border-radius:22px;background:rgba(20,17,13,.72);border:1px solid var(--ligne);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form.verre-liquide{background:rgba(20,17,13,.55)}
+label{display:flex;flex-direction:column;gap:7px;font-size:15px;font-weight:500;color:var(--doux)}
+label.large,fieldset,form .bouton,form .note{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:17px;color:var(--texte);background:rgba(0,0,0,.35);border:1px solid var(--ligne);border-radius:10px;padding:12px 14px;width:100%;min-width:0}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--or);outline-offset:1px}
+textarea{min-height:90px;resize:vertical}
+fieldset{border:0;display:flex;flex-wrap:wrap;gap:8px}
+legend{font-size:15px;font-weight:500;color:var(--doux);margin-bottom:9px}
+.choix input{position:absolute;opacity:0;pointer-events:none}
+.choix span{display:inline-block;padding:9px 15px;border:1px solid var(--ligne);border-radius:10px;font-size:16px;color:var(--texte);cursor:pointer;transition:all .2s}
+.choix input:checked+span{border-color:var(--or);background:rgba(216,181,111,.14);color:var(--or)}
+.choix input:focus-visible+span{outline:2px solid var(--or)}
+form .bouton{justify-content:center;border:0;cursor:pointer}
+form .note{font-size:14px;color:var(--doux);text-align:center}
+@media(max-width:860px){.contact .grille{grid-template-columns:1fr;gap:36px}}
+@media(max-width:480px){form{grid-template-columns:1fr;padding:20px}}
+
+footer{border-top:1px solid var(--ligne);padding:34px 0 46px;font-size:15px;color:var(--doux)}
+footer .cadre{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:var(--texte)}
+
+.apparait{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.apparait.vu{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.apparait{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+<script>if(/SamsungBrowser/i.test(navigator.userAgent))document.documentElement.classList.add('samsung')</script>
 </head>
-<body data-page="accueil">
+<body>
+
 <header class="entete">
-  <a class="marque" href="index.html"><img src="img/logo.jpg" alt="">La Cuillère d'Or</a>
-  <nav class="liens" id="liens" aria-label="Pages"><span class="lentille" aria-hidden="true"></span><a href="index.html" data-page="accueil">Accueil</a><a href="carte.html" data-page="carte">La carte</a><a href="brunch.html" data-page="brunch">Brunch</a><a href="infos.html" data-page="infos">Infos</a></nav>
-  <div class="droite">
-    <a class="btn plein" href="tel:+33381313506">Réserver</a>
-    <button class="menu-btn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 18 18" aria-hidden="true"><line x1="3" y1="6.5" x2="15" y2="6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="3" y1="11.5" x2="15" y2="11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
-  </div>
+  <a class="logo" href="#accueil">DJ Hako</a>
+  <nav class="nav" aria-label="Menu">
+    <a href="#accueil" class="actif">Accueil</a>
+    <a href="#mariages">Réalisations</a>
+    <a href="#avis">Avis</a>
+    <a href="#prestations">Prestations</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+33659485264" class="appel">Appeler</a>
+  </nav>
 </header>
-<div class="menu" id="menu">
-  <nav aria-label="Pages"><a href="index.html" data-page="accueil">Accueil</a><a href="carte.html" data-page="carte">La carte</a><a href="brunch.html" data-page="brunch">Le brunch</a><a href="infos.html" data-page="infos">Infos et accès</a></nav>
-  <div class="boutons"><a class="btn plein" href="tel:+33381313506">Appeler</a><a class="btn verre" href="https://www.google.com/maps/search/?api=1&amp;query=La+Cuill%C3%A8re+d%27Or+45+avenue+Jean+Jaur%C3%A8s+25400+Audincourt" target="_blank" rel="noopener">Itinéraire</a></div>
-  <p>45 avenue Jean Jaurès, Audincourt · Fermé le mercredi</p>
-</div>
+
 <main>
-<section class="hero">
-  <picture><source media="(max-width:760px)" srcset="img/fondtel.jpg"><img src="img/fondordi.jpg" alt="" fetchpriority="high"></picture>
-  <span class="oeil">Restaurant familial à Audincourt</span>
-  <h1>Quand l'Orient rencontre <span class="or">l'Occident.</span></h1>
-  <p class="lead">Couscous, tajines et pastillas de la cheffe, pizzas et panuozzo cuits minute. Une cuisine 100 % halal, sur place ou à emporter.</p>
-  <div class="boutons"><a class="btn plein" href="tel:+33381313506">Réserver une table</a><a class="btn verre" href="carte.html">Voir la carte</a></div>
-</section>
-
-<section class="sec centre">
-  <div class="cadre">
-    <div class="vient">
-      <span class="oeil">La maison</span>
-      <h2 class="titre">Chaque bouchée invite au voyage.</h2>
-      <p class="lead">Inspirée par l'Orient et l'Occident, notre cuisine associe produits frais, savoir-faire, traditions et modernité. Une cuisine généreuse, élégante et gourmande.</p>
-    </div>
-    <div class="faits vient">
-      <div class="fait"><b>100 % halal</b><span>Toute la carte</span></div>
-      <div class="fait"><b>Midi et soir</b><span>Fermé le mercredi</span></div>
-      <div class="fait"><b>Le dimanche</b><span>Brunch de 10h à 18h30</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cadre">
-    <div class="centre vient">
-      <span class="oeil">Les spécialités</span>
-      <h2 class="titre">Faites maison, chaque jour.</h2>
-      <p class="lead">Les recettes de la cheffe, et le meilleur de l'Italie pour ceux qui préfèrent une pizza.</p>
-    </div>
-    <div class="plats">
-      <a class="plat vient" href="carte.html#orient"><div class="photo"><img src="img/couscous.jpg" alt="Couscous" loading="lazy"></div><div class="haut"><h3>Couscous</h3><span class="prix">dès 13,50 €</span></div><p>Végétarien, poulet, viande ou royal.</p></a>
-      <a class="plat vient" href="carte.html#orient"><div class="photo"><img src="img/tajine.jpg" alt="Tajines" loading="lazy"></div><div class="haut"><h3>Tajines</h3><span class="prix">dès 15 €</span></div><p>Kefta, poulet au citron, viande aux pruneaux.</p></a>
-      <a class="plat vient" href="carte.html#orient"><div class="photo"><img src="img/pastilla.jpg" alt="Pastilla" loading="lazy"></div><div class="haut"><h3>Pastilla</h3><span class="prix">13 €</span></div><p>Poulet, amandes, sucré salé.</p></a>
-      <a class="plat vient" href="carte.html#entrees"><div class="photo"><img src="img/bricks.jpg" alt="Bricks" loading="lazy"></div><div class="haut"><h3>Bricks</h3><span class="prix"></span></div><p>Poulet, viande hachée ou Annabi.</p></a>
-      <a class="plat vient" href="carte.html#assiettes"><div class="photo"><img src="img/grillades.jpg" alt="Grillades" loading="lazy"></div><div class="haut"><h3>Grillades</h3><span class="prix"></span></div><p>Brochettes, côtelettes et assiette de la cheffe.</p></a>
-      <a class="plat vient" href="carte.html#pizzas"><div class="photo"><img src="img/pizza.jpg" alt="Pizzas" loading="lazy"></div><div class="haut"><h3>Pizzas</h3><span class="prix">dès 9,50 €</span></div><p>Base tomate ou crème, cuites minute.</p></a>
-    </div>
-    <div class="boutons"><a class="btn verre" href="carte.html">Voir toute la carte</a></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cadre">
-    <div class="panneau vient">
-      <div class="image"><img src="img/brunch.jpg" alt="Le brunch du dimanche" loading="lazy"></div>
+  <section class="accueil" id="accueil" style="padding:0">
+    <div class="image"><img src="img/platines.jpg" alt="Platines de DJ devant une salle de réception éclairée par des lustres"></div>
+    <div class="cadre">
       <div class="texte">
-        <span class="oeil">Le dimanche, de 10h à 18h30</span>
-        <h2 class="titre">Le brunch.</h2>
-        <p class="lead">Un voyage de saveurs à partager, en famille ou entre amis. Trois formules, de 9,90 € à 15 €.</p>
-        <div class="boutons"><a class="btn verre" href="brunch.html">Découvrir le brunch</a></div>
+        <p class="sur">DJ de mariage · Lyon et Rhône-Alpes</p>
+        <h1>Une seule soirée.<br>Aucun droit à l'erreur.</h1>
+        <p class="chapo">Votre mariage n'a lieu qu'une fois. Confiez la musique et l'ambiance à la référence des mariages lyonnais.</p>
+        <a class="bouton" href="#contact">Vérifier ma date</a>
       </div>
     </div>
-  </div>
-</section>
+    <div class="contacts">
+      <div class="cadre">
+        <div class="carte-contact">
+          <a href="tel:+33659485264"><b>Appelez DJ Hako</b><span>06 59 48 52 64</span></a>
+          <a href="https://www.instagram.com/djhakomariage/" target="_blank" rel="noopener"><b>Sur Instagram</b><span>@djhakomariage</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="sec centre">
-  <div class="cadre vient">
-    <span class="oeil">45 avenue Jean Jaurès, Audincourt</span>
-    <h2 class="titre">Venez nous voir.</h2>
-    <p class="lead">Sur place ou à emporter, midi et soir. Réservation et commande par téléphone.</p>
-    <div class="boutons"><a class="btn plein" href="tel:+33381313506">Appeler</a><a class="btn verre" href="infos.html">Horaires et accès</a></div>
-  </div>
-</section>
+  <section class="mariages" id="mariages">
+    <div class="cadre">
+      <div class="titre-section apparait">
+        <h2>Mes réalisations :<br>des soirées dont on reparle.</h2>
+        <p class="chapo">Quelques moments de mariages que j'ai animés, de l'entrée des mariés à la première danse.</p>
+      </div>
+    </div>
+    <div class="carrousel apparait" id="carrousel" aria-label="Mes réalisations">
+      <figure class="diapo"><div class="media"><img src="img/premiere-danse-grand.jpg" alt="Première danse des mariés sous les étincelles et la fumée lourde" loading="lazy"></div><figcaption><b>La première danse.</b> Étincelles et fumée lourde, le moment que tout le monde filme.</figcaption></figure>
+      <figure class="diapo"><div class="media"><img src="img/entree.jpg" alt="Entrée de la mariée sur le tapis rouge" loading="lazy"></div><figcaption><b>L'entrée des mariés.</b> Tapis rouge, porteurs et musique : une arrivée qu'on n'oublie pas.</figcaption></figure>
+      <figure class="diapo"><div class="media"><img src="img/animation.jpg" alt="Saxophoniste au milieu des invités, les mariés au premier plan" loading="lazy"></div><figcaption><b>L'animation.</b> Le saxophone au milieu des invités, et toute la salle debout.</figcaption></figure>
+      <figure class="diapo"><div class="media"><img src="img/salle.jpg" alt="Salle sous les lustres avec jeux de lumière" loading="lazy"></div><figcaption><b>Le grand show.</b> Lumières, lustres et fontaines d'étincelles pour l'ouverture du bal.</figcaption></figure>
+    </div>
+    <div class="cadre">
+      <div class="commandes">
+        <button class="rond lecture" id="lecture" type="button" aria-label="Pause" hidden><svg class="anneau" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/></svg><svg class="icone" viewBox="0 0 20 20" fill="currentColor"><rect x="5" y="4" width="3.5" height="12" rx="1"/><rect x="11.5" y="4" width="3.5" height="12" rx="1"/></svg></button>
+        <div class="points" id="points" aria-hidden="true"></div>
+        <div class="ronds">
+          <button class="rond" id="prec" type="button" aria-label="Précédent"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
+          <button class="rond" id="suiv" type="button" aria-label="Suivant"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="confiance" id="avis">
+    <div class="cadre">
+      <div class="titre-section apparait">
+        <h2>Ils lui ont confié<br>leur plus beau jour.</h2>
+        <p class="chapo">Ce que disent les mariés, et pourquoi ils réservent DJ Hako.</p>
+      </div>
+      <div class="preuves">
+        <div class="preuve apparait"><b>8 000</b><span>personnes suivent ses soirées sur Instagram</span></div>
+        <div class="preuve apparait"><b>Lyon et Rhône-Alpes</b><span>il se déplace dans toute la région</span></div>
+        <div class="preuve apparait"><b>Une seule équipe</b><span>DJ, negafa, option panda et voiture : un seul interlocuteur</span></div>
+      </div>
+      <div class="avis">
+        <figure class="carte-avis a-completer apparait"><blockquote>« Avis d'un couple de mariés à ajouter ici, copié d'un message ou d'un avis Google. »</blockquote><figcaption><b>Prénoms des mariés</b><span>Mariage à …, mois année</span></figcaption></figure>
+        <figure class="carte-avis a-completer apparait"><blockquote>« Deuxième avis à ajouter : ce qui les a marqués pendant la soirée. »</blockquote><figcaption><b>Prénoms des mariés</b><span>Mariage à …, mois année</span></figcaption></figure>
+        <figure class="carte-avis a-completer apparait"><blockquote>« Troisième avis à ajouter : l'ambiance, les invités, l'organisation. »</blockquote><figcaption><b>Prénoms des mariés</b><span>Mariage à …, mois année</span></figcaption></figure>
+      </div>
+      <div class="insta apparait">
+        <p>Retrouvez les retours des mariés et les vidéos de ses soirées sur Instagram.</p>
+        <a class="bouton ligne" href="https://www.instagram.com/djhakomariage/" target="_blank" rel="noopener">Voir @djhakomariage</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="prestations" id="prestations">
+    <div class="cadre">
+      <div class="titre-section apparait">
+        <h2>Tout votre mariage,<br>avec une seule équipe.</h2>
+        <p class="chapo">De la musique à l'arrivée des mariés, vous choisissez ce dont vous avez besoin. On s'occupe du reste.</p>
+      </div>
+      <div class="liste">
+        <ul>
+          <li class="apparait"><h3>DJ et animation</h3><span class="tag">Le cœur de la soirée</span>
+            <p>La musique de l'entrée à la dernière danse, l'animation au micro et les effets pour les grands moments : fumée lourde, étincelles, lumières.</p></li>
+          <li class="apparait"><h3>Negafa complète</h3><span class="tag">Tradition</span>
+            <p>Tenues, porteurs et mise en scène des passages de la mariée, pour un mariage oriental dans les règles.</p></li>
+          <li class="apparait"><h3>Option Panda</h3><span class="tag">En option</span>
+            <p>L'option qui fait sourire petits et grands. Demandez-nous le détail en vérifiant votre date.</p></li>
+          <li class="apparait"><h3>Voiture de prestige</h3><span class="tag">En option</span>
+            <p>Une arrivée à la hauteur du jour : la voiture des mariés, prête et décorée.</p></li>
+        </ul>
+        <figure class="apparait"><img src="img/salle.jpg" alt="Salle de réception sous les lustres, jeux de lumière et fontaines d'étincelles" loading="lazy" style="object-position:50% 40%"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="deroule">
+    <div class="cadre">
+      <div class="titre-section apparait">
+        <h2>Simple, du premier appel<br>au jour J.</h2>
+      </div>
+      <ol>
+        <li class="apparait"><h3>Vous vérifiez votre date</h3><p>Envoyez la date, la salle et ce qui vous intéresse. Réponse rapide, sans engagement.</p></li>
+        <li class="apparait"><h3>On prépare la soirée ensemble</h3><p>Vos musiques, vos entrées, vos traditions : on cale le déroulé avec vous, moment par moment.</p></li>
+        <li class="apparait"><h3>Le jour J, vous profitez</h3><p>On arrive, on installe, on anime. Vous n'avez plus qu'à vivre votre soirée.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="fond"><img src="img/salle.jpg" alt="" loading="lazy"></div>
+    <div class="cadre grille">
+      <div class="apparait">
+        <p class="sur">Les dates partent vite</p>
+        <h2>Votre date est-elle encore libre ?</h2>
+        <p class="chapo">Remplissez ce petit formulaire : il s'envoie directement sur WhatsApp à DJ Hako. Vous pouvez aussi l'appeler.</p>
+        <div class="direct">
+          <a class="bouton ligne" href="tel:+33659485264">Appeler le 06 59 48 52 64</a>
+          <a class="bouton ligne" href="https://www.instagram.com/djhakomariage/" target="_blank" rel="noopener">Écrire sur Instagram</a>
+        </div>
+      </div>
+      <form id="demande" class="apparait" novalidate>
+        <label>Date du mariage<input type="date" name="date" required></label>
+        <label>Ville ou salle<input type="text" name="lieu" placeholder="Ex. Lyon, Villeurbanne…" autocomplete="address-level2"></label>
+        <label>Nombre d'invités<input type="number" name="invites" min="10" step="10" inputmode="numeric" placeholder="Ex. 250"></label>
+        <label>Votre prénom<input type="text" name="prenom" autocomplete="given-name" required></label>
+        <fieldset>
+          <legend>Ce qui vous intéresse</legend>
+          <label class="choix"><input type="checkbox" name="presta" value="DJ et animation" checked><span>DJ et animation</span></label>
+          <label class="choix"><input type="checkbox" name="presta" value="Negafa complète"><span>Negafa complète</span></label>
+          <label class="choix"><input type="checkbox" name="presta" value="Option Panda"><span>Option Panda</span></label>
+          <label class="choix"><input type="checkbox" name="presta" value="Voiture de prestige"><span>Voiture de prestige</span></label>
+        </fieldset>
+        <label class="large">Un mot sur votre soirée (facultatif)<textarea name="message" placeholder="Mariage oriental, mixte, vos musiques préférées…"></textarea></label>
+        <button class="bouton" type="submit">Vérifier ma date sur WhatsApp</button>
+        <p class="note">Rien n'est envoyé sans votre accord : WhatsApp s'ouvre avec votre message prêt.</p>
+      </form>
+    </div>
+  </section>
 </main>
-<footer class="pied">
+
+<footer>
   <div class="cadre">
-    <span>© La Cuillère d'Or · Restaurant familial 100 % halal · 45 avenue Jean Jaurès, 25400 Audincourt</span>
-    <nav aria-label="Pied de page"><a href="carte.html">La carte</a><a href="brunch.html">Brunch</a><a href="infos.html">Infos</a><span>Site réalisé par Mon Site Studio</span></nav>
+    <p>DJ Hako · DJ de mariage à Lyon et en Rhône-Alpes</p>
+    <p><a href="tel:+33659485264">06 59 48 52 64</a> · <a href="https://www.instagram.com/djhakomariage/" target="_blank" rel="noopener">@djhakomariage</a> · <a href="mentions-legales.html">Mentions légales</a></p>
   </div>
 </footer>
-<script src="assets/site.js"></script>
-<script type="module">import { verre } from "./assets/verre-liquide.js"; verre(".entete"); verre(".segment"); verre(".btn.verre");</script>
+
+<script>
+// Apparition douce au défilement
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.apparait').forEach(el=>io.observe(el));
+
+
+// Carrousel façon Apple : flèches, points, vidéo de la diapo active avec anneau de lecture
+(()=>{
+  const c=document.getElementById('carrousel'),d=[...c.querySelectorAll('.diapo')],pts=document.getElementById('points');
+  const prec=document.getElementById('prec'),suiv=document.getElementById('suiv'),btn=document.getElementById('lecture'),cercle=btn.querySelector('.anneau circle');
+  d.forEach(()=>pts.appendChild(document.createElement('span')));
+  const pas=()=>d[0].offsetWidth+20;
+  let i=0,pause=false;
+  const videos=d.map(x=>x.querySelector('video'));
+  if(videos.some(Boolean))btn.hidden=false;
+  const icone=p=>btn.querySelector('.icone').innerHTML=p?'<path d="M6 4.5v11l9-5.5z"/>':'<rect x="5" y="4" width="3.5" height="12" rx="1"/><rect x="11.5" y="4" width="3.5" height="12" rx="1"/>';
+  function maj(){
+    i=Math.round(c.scrollLeft/pas());
+    if(c.scrollLeft+c.clientWidth>=c.scrollWidth-4)i=d.length-1;
+    [...pts.children].forEach((p,k)=>p.classList.toggle('actif',k===i));
+    prec.disabled=c.scrollLeft<4; suiv.disabled=c.scrollLeft+c.clientWidth>=c.scrollWidth-4;
+    videos.forEach((v,k)=>{if(!v)return; if(k===i&&!pause){v.play().catch(()=>{})}else v.pause()});
+  }
+  videos.forEach((v,k)=>{if(!v)return;
+    v.addEventListener('timeupdate',()=>{if(k===i&&v.duration)cercle.style.strokeDashoffset=150.8*(1-v.currentTime/v.duration)});
+    v.addEventListener('ended',()=>{ if(k<d.length-1)c.scrollBy({left:pas()}); else {v.currentTime=0;v.play()} });
+  });
+  btn.addEventListener('click',()=>{pause=!pause;icone(pause);btn.setAttribute('aria-label',pause?'Lecture':'Pause');maj()});
+  prec.addEventListener('click',()=>c.scrollBy({left:-pas()}));
+  suiv.addEventListener('click',()=>c.scrollBy({left:pas()}));
+  let t;c.addEventListener('scroll',()=>{clearTimeout(t);t=setTimeout(maj,80)},{passive:true});
+  new IntersectionObserver(([e])=>{if(!e.isIntersecting)videos.forEach(v=>v&&v.pause());else maj()},{threshold:.3}).observe(c);
+  maj();
+})();
+
+// Lien actif dans le menu
+const liens=[...document.querySelectorAll('.nav a[href^="#"]')];
+const sections=liens.map(a=>document.querySelector(a.getAttribute('href')));
+addEventListener('scroll',()=>{let i=0;sections.forEach((s,k)=>{if(s.getBoundingClientRect().top<innerHeight*.4)i=k});liens.forEach((a,k)=>a.classList.toggle('actif',k===i))},{passive:true});
+
+// Formulaire -> message WhatsApp prêt
+document.getElementById('demande').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target, d=f.date.value, p=f.prenom.value.trim();
+  if(!d){f.date.focus();return}
+  if(!p){f.prenom.focus();return}
+  const date=new Date(d+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  const prestas=[...f.querySelectorAll('[name=presta]:checked')].map(c=>c.value).join(', ')||'à voir ensemble';
+  const lignes=[`Bonjour DJ Hako, je suis ${p}.`,`Notre mariage est prévu le ${date}${f.lieu.value?` à ${f.lieu.value.trim()}`:''}${f.invites.value?`, avec environ ${f.invites.value} invités`:''}.`,`Ce qui nous intéresse : ${prestas}.`];
+  if(f.message.value.trim())lignes.push(f.message.value.trim());
+  lignes.push('La date est-elle libre ?');
+  open('https://wa.me/33659485264?text='+encodeURIComponent(lignes.join('\n')),'_blank','noopener');
+});
+</script>
+<script type="module">
+import { verre } from './verre-liquide.js';
+verre('.nav'); verre('.carte-contact'); verre('#demande');
+</script>
 </body>
 </html>
