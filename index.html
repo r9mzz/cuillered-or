@@ -18,11 +18,9 @@
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"DJ Hako","description":"DJ et animation de mariage, negafa complète, 3amaria, option Panda et voiture de prestige.","telephone":"+33659485264","areaServed":["Lyon","Rhône-Alpes"],"image":"img/platines.jpg","sameAs":["https://www.instagram.com/djhakomariage/"]}
 </script>
 <style>:root{--u:1px}
-@media(min-width:1600px){:root{--u:1.12px}}
-@media(min-width:1850px){:root{--u:1.28px}}
-@media(min-width:2150px){:root{--u:1.45px}}
-@media(min-width:2500px){:root{--u:1.7px}}
-@media(min-width:3000px){:root{--u:2px}}
+@media(min-width:1700px){:root{--u:1.08px}}
+@media(min-width:2100px){:root{--u:1.16px}}
+@media(min-width:2500px){:root{--u:1.25px}}
 
 :root{
   --noir:#0a0806; --noir-2:#13100c; --noir-3:#1c1813;
@@ -50,7 +48,8 @@ p{max-width:62ch}
 html.samsung .bouton.plein{background:#16110a;color:var(--or);border-color:var(--or)}
 
 /* Barre */
-.entete{position:fixed;top:calc(16*var(--u));left:0;right:0;z-index:20}
+.entete{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(14*var(--u)) 0;transition:background .25s,backdrop-filter .25s}
+.entete.scrolle{background:rgba(10,8,6,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--filet)}
 .entete .cadre{display:flex;justify-content:space-between;align-items:center}
 .logo{font-weight:600;font-size:calc(18*var(--u));letter-spacing:-.02em;text-decoration:none}
 .nav{display:flex;gap:2px;padding:calc(4*var(--u));border-radius:calc(999*var(--u));background:rgba(19,16,12,.6);border:1px solid var(--filet);backdrop-filter:blur(calc(14*var(--u)));-webkit-backdrop-filter:blur(calc(14*var(--u)))}
@@ -86,8 +85,8 @@ html.samsung .nav a.appel{background:transparent;color:var(--or)}
   .actions .bouton{flex:1;padding:0 calc(12*var(--u))}
 }
 
-section{padding:calc(120*var(--u)) 0}
-@media(max-width:760px){section{padding:calc(80*var(--u)) 0}}
+section{padding:110px 0}
+@media(max-width:760px){section{padding:80px 0}}
 .entree-section{display:grid;grid-template-columns:1fr 1fr;gap:calc(40*var(--u));align-items:end;margin-bottom:calc(48*var(--u))}
 .entree-section p{color:var(--gris)}
 @media(max-width:860px){.entree-section{grid-template-columns:1fr;gap:calc(16*var(--u));margin-bottom:calc(36*var(--u))}}
@@ -169,6 +168,7 @@ footer a:hover{color:var(--blanc)}
   .offre{gap:calc(96*var(--u))}
   .offre li p{max-width:none}
 }
+.confiance{padding-bottom:40px}
 </style>
 <script>if(/SamsungBrowser/i.test(navigator.userAgent))document.documentElement.classList.add('samsung')</script>
 </head>
@@ -314,6 +314,9 @@ footer a:hover{color:var(--blanc)}
   new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(!visible)videos.forEach(v=>v&&v.pause());maj()},{threshold:.4}).observe(c);
   maj();
 })();
+
+// Barre du haut opaque au défilement
+(()=>{const e=document.querySelector('.entete');const f=()=>e.classList.toggle('scrolle',scrollY>40);addEventListener('scroll',f,{passive:true});f()})();
 
 // Formulaire -> WhatsApp, avec vérification
 document.getElementById('demande').addEventListener('submit',e=>{
