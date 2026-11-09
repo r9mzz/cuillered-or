@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ziana So Chic</title>
+<meta name="description" content="Ziana So Chic : tenues haute couture et négafa pour votre mariage, à Paris, en Île-de-France et dans les Yvelines. Caftans, karakous et robes kabyles.">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#F4EDDD">
+<meta property="og:title" content="Ziana So Chic">
+<meta property="og:description" content="Tenues haute couture et négafa, à Paris, en Île-de-France et dans les Yvelines.">
+<meta property="og:image" content="https://r9mzz.github.io/cuillered-or/ziana-so-chic/img/mariee-portrait.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Inter:opsz,wght@14..32,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>if(/police=apple/.test(location.search))document.documentElement.classList.add('police-apple')</script>
+</head>
+<body>
+
+<header class="entete" id="entete">
+  <a class="marque" href="#haut" aria-label="Ziana So Chic, retour en haut">Ziana So Chic</a>
+  <nav class="nav" id="nav" aria-label="Navigation principale">
+    <a href="#tenues">Tenues</a>
+    <a href="#negafa">La négafa</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+</header>
+
+<main id="haut">
+
+  <!-- Accueil : la maquette « beige épuré » -->
+  <section class="accueil">
+    <div class="mosaique">
+      <figure class="m-grand"><img src="img/mariee-portrait.jpg" alt="Mariée en caftan doré et couronne, habillée par Ziana So Chic" fetchpriority="high"></figure>
+      <figure class="m-haut"><img src="img/champagne-detail.jpg" alt="Détail d'un caftan champagne brodé de perles et de fils dorés"></figure>
+      <figure class="m-bas"><img src="img/mariee-kabyle.jpg" alt="Mariée en robe kabyle blanche et rouge, coiffe traditionnelle"></figure>
+    </div>
+    <div class="accueil-texte">
+      <h1>Le mariage haut de gamme, à Paris.</h1>
+      <p class="chapo">Tenues haute couture et négafa, à Paris, en Île-de-France et dans les Yvelines.</p>
+      <a class="bouton" href="#contact">Réserver ma date</a>
+    </div>
+  </section>
+
+  <!-- Sa devise -->
+  <section class="passion" aria-labelledby="t-passion">
+    <div class="passion-texte">
+      <h2 id="t-passion">Notre passion à votre service.</h2>
+      <p>25 ans de savoir-faire pour des mariages haut de gamme, à Paris et en Île-de-France.</p>
+      <p>Chaque tenue est choisie avec vous, pour votre tradition, vos couleurs et votre soirée.</p>
+    </div>
+    <figure class="passion-photo"><img src="img/champagne-grand.jpg" alt="Caftan champagne entièrement brodé, ceinture perlée, présenté dans le salon" loading="lazy"></figure>
+  </section>
+
+  <!-- Les tenues -->
+  <section class="tenues" id="tenues" aria-labelledby="t-tenues">
+    <div class="tenues-tete">
+      <h2 id="t-tenues">Une tenue pour chaque tradition.</h2>
+      <p>Caftans, karakous et robes kabyles. Touchez une tenue pour la voir en grand.</p>
+    </div>
+    <ul class="grille" role="list">
+      <li><button class="tenue" data-src="img/caftan-ivoire.jpg"><img src="img/caftan-ivoire.jpg" alt="Tenue ivoire et or" loading="lazy"><span>Ivoire et or</span></button></li>
+      <li><button class="tenue" data-src="img/champagne-grand.jpg"><img src="img/caftan-champagne.jpg" alt="Caftan champagne" loading="lazy"><span>Champagne</span></button></li>
+      <li><button class="tenue" data-src="img/caftan-turquoise.jpg"><img src="img/caftan-turquoise.jpg" alt="Tenue turquoise et or" loading="lazy"><span>Turquoise</span></button></li>
+      <li><button class="tenue" data-src="img/bleu-nuit-grand.jpg"><img src="img/caftan-bleu-nuit.jpg" alt="Tenue en velours bleu nuit brodée d'or" loading="lazy"><span>Bleu nuit</span></button></li>
+      <li><button class="tenue" data-src="img/caftan-rouge.jpg"><img src="img/caftan-rouge.jpg" alt="Tenue en velours rouge brodée d'or" loading="lazy"><span>Rouge</span></button></li>
+      <li><button class="tenue" data-src="img/caftan-bordeaux.jpg"><img src="img/caftan-bordeaux.jpg" alt="Tenue bordeaux brodée d'or" loading="lazy"><span>Bordeaux</span></button></li>
+    </ul>
+  </section>
+
+  <!-- Une grande tenue -->
+  <section class="vedette" aria-label="Tenue bleu nuit">
+    <figure><img src="img/bleu-nuit-grand.jpg" alt="Grande tenue en velours bleu nuit, broderies dorées et traîne, sous le lustre du salon" loading="lazy"></figure>
+    <div class="vedette-texte">
+      <h2>La haute couture, jusqu'au dernier détail.</h2>
+      <p>Velours, broderies dorées, perles et traînes.</p>
+    </div>
+  </section>
+
+  <!-- La négafa -->
+  <section class="negafa" id="negafa" aria-labelledby="t-negafa">
+    <h2 id="t-negafa">La négafa, le jour de votre mariage.</h2>
+    <div class="negafa-texte">
+      <p>Le jour J, nous vous habillons et nous vous accompagnons à chaque changement de tenue, du caftan à la robe kabyle.</p>
+      <p class="lieux">Paris, Île-de-France et Yvelines.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact" aria-labelledby="t-contact">
+    <div class="contact-tete">
+      <h2 id="t-contact">Réservez votre date.</h2>
+      <p>Dites-nous la date et ce qui vous plaît, on vous répond sur Instagram.</p>
+    </div>
+    <form class="formulaire" id="formulaire" novalidate>
+      <label>Votre prénom<input name="prenom" autocomplete="given-name" required></label>
+      <label>Date du mariage<input name="date" type="date" required></label>
+      <label>Ville du mariage<input name="ville" autocomplete="address-level2"></label>
+      <fieldset>
+        <legend>Ce qui vous intéresse</legend>
+        <div class="choix">
+          <label><input type="checkbox" name="envie" value="Caftan"><span>Caftan</span></label>
+          <label><input type="checkbox" name="envie" value="Karakou"><span>Karakou</span></label>
+          <label><input type="checkbox" name="envie" value="Robe kabyle"><span>Robe kabyle</span></label>
+          <label><input type="checkbox" name="envie" value="Négafa le jour J"><span>Négafa le jour J</span></label>
+        </div>
+      </fieldset>
+      <label class="large">Un mot de plus<textarea name="message" rows="3" placeholder="Nombre de tenues, couleurs, questions…"></textarea></label>
+      <button class="bouton" type="submit">Envoyer sur Instagram</button>
+      <p class="aide" id="aide" role="status">Votre message est copié : collez-le dans la conversation qui s'ouvre.</p>
+    </form>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="pied-haut">
+    <p class="marque">Ziana So Chic</p>
+    <p>Haute couture et négafa<br>Paris, Île-de-France et Yvelines</p>
+    <p><a href="https://www.instagram.com/ziana_so_chic/" target="_blank" rel="noopener">Instagram @ziana_so_chic</a></p>
+  </div>
+  <div class="pied-bas">
+    <button class="lien" id="ouvrir-mentions">Mentions légales</button>
+    <span>© 2026 Ziana So Chic</span>
+    <a href="https://www.instagram.com/monsite.studio/" target="_blank" rel="noopener">Site réalisé par Mon Site Studio</a>
+  </div>
+</footer>
+
+<dialog class="visionneuse" id="visionneuse" aria-label="Tenue en grand">
+  <img alt="">
+  <button class="fermer" aria-label="Fermer">Fermer</button>
+</dialog>
+
+<dialog class="mentions" id="mentions" aria-labelledby="t-mentions">
+  <h2 id="t-mentions">Mentions légales</h2>
+  <p><strong>Éditrice du site :</strong> <span class="a-completer">nom, statut et SIRET à compléter</span></p>
+  <p><strong>Adresse :</strong> <span class="a-completer">à compléter</span></p>
+  <p><strong>Contact :</strong> Instagram @ziana_so_chic</p>
+  <p><strong>Hébergement :</strong> GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis.</p>
+  <p><strong>Photos :</strong> toutes les photos sont celles de Ziana So Chic.</p>
+  <p><strong>Données :</strong> le formulaire n'enregistre rien. Il prépare un message que vous envoyez vous-même sur Instagram.</p>
+  <button class="bouton" id="fermer-mentions">Fermer</button>
+</dialog>
+
+<script src="site.js"></script>
+<script type="module">
+  import { verre } from "./verre-liquide.js";
+  verre(".nav");
+  verre(".menu-btn");
+</script>
+</body>
+</html>
