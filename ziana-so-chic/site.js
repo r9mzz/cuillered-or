@@ -43,6 +43,20 @@
   if (tel.addEventListener) tel.addEventListener('change', appliquer);
   appliquer();
 
+  // Points sous les carrousels (téléphone) : montrent qu'on peut faire glisser
+  document.querySelectorAll('.points').forEach(function(p){
+    var piste = document.querySelector('.' + p.dataset.pour);
+    if (!piste) return;
+    var items = piste.children, pts = [];
+    for (var i = 0; i < items.length; i++){ var s = document.createElement('span'); p.appendChild(s); pts.push(s); }
+    function maj(){
+      var max = piste.scrollWidth - piste.clientWidth;
+      var k = max > 0 ? Math.round(piste.scrollLeft / max * (items.length - 1)) : 0;
+      pts.forEach(function(s, i){ s.classList.toggle('on', i === k); });
+    }
+    piste.addEventListener('scroll', maj, {passive:true}); maj();
+  });
+
   // Visionneuse
   var vis = document.getElementById('visionneuse'), visImg = vis.querySelector('img');
   document.querySelectorAll('.tenue').forEach(function(b){
@@ -72,8 +86,7 @@
     try { dateTxt = new Date(d + 'T12:00').toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'}); } catch(_){}
     var envies = Array.prototype.map.call(f.querySelectorAll('input[name=envie]:checked'), function(i){ return i.value; });
     var t = 'Bonjour, je suis ' + f.elements.prenom.value.trim() + '. Mon mariage est le ' + dateTxt;
-    if (f.elements.ville.value.trim()) t += ', à ' + f.elements.ville.value.trim();
-    t += '.';
+        t += '.';
     if (envies.length) t += ' Je suis intéressée par : ' + envies.join(', ').toLowerCase() + '.';
     if (f.elements.message.value.trim()) t += ' ' + f.elements.message.value.trim();
     t += ' (message envoyé depuis votre site)';
