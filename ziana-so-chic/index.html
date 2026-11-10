@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Inter:opsz,wght@14..32,400..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261110c">
 <script>(function(d){if(/police=apple/.test(location.search))d.classList.add('police-apple');if(matchMedia('(max-width:640px)').matches){var h=location.hash.slice(1);d.classList.add('app');d.setAttribute('data-ecran',['tenues','negafa','contact'].indexOf(h)>=0?h:'haut')}})(document.documentElement)</script>
 </head>
 <body>
@@ -55,11 +55,23 @@
     <figure class="passion-photo"><img src="img/champagne-grand.jpg" alt="Caftan champagne entièrement brodé, ceinture perlée, présenté dans le salon" loading="lazy"></figure>
   </section>
 
+
+  <!-- Téléphone : aperçu des tenues sur l'accueil -->
+  <section class="apercu tel-seul" data-page="haut" aria-label="Aperçu des tenues">
+    <h2>Une tenue pour chaque tradition.</h2>
+    <div class="apercu-grille">
+      <img src="img/caftan-ivoire.jpg" alt="Tenue ivoire et or" loading="lazy">
+      <img src="img/caftan-turquoise.jpg" alt="Tenue turquoise et or" loading="lazy">
+      <img src="img/caftan-rouge.jpg" alt="Tenue en velours rouge brodée d'or" loading="lazy">
+    </div>
+    <a class="bouton bouton-clair" href="#tenues">Voir toutes les tenues</a>
+  </section>
+
   <!-- Les tenues -->
   <section class="tenues" data-page="tenues" id="tenues" aria-labelledby="t-tenues">
     <div class="tenues-tete">
       <h2 id="t-tenues">Caftans, karakous et robes kabyles.</h2>
-      <p>Une tenue pour chaque tradition. Touchez une tenue pour la voir en grand.</p>
+      <p>Une tenue pour chaque tradition, et les tenues homme assorties. Touchez une tenue pour la voir en grand.</p>
     </div>
     <ul class="grille" role="list">
       <li><button class="tenue" data-src="img/caftan-ivoire.jpg"><img src="img/caftan-ivoire.jpg" alt="Tenue ivoire et or" loading="lazy"><span>Ivoire et or</span></button></li>
@@ -78,7 +90,33 @@
     <div class="vedette-texte">
       <h2>La haute couture, jusqu'au dernier détail.</h2>
       <p>Velours, broderies dorées, perles et traînes.</p>
-      <a class="bouton tel-seul" href="#contact">Réserver ma date</a>
+    </div>
+  </section>
+
+
+
+  <!-- Galerie -->
+  <section class="galerie" data-page="tenues" aria-labelledby="t-galerie">
+    <h2 id="t-galerie">Robes de mariée et tenues portées.</h2>
+    <div class="galerie-grille">
+      <button class="tenue" data-src="img/galerie-traine-dentelle.jpg"><img src="img/galerie-traine-dentelle.jpg" alt="Robe champagne avec longue traîne en dentelle, vue de dos" loading="lazy"></button>
+      <button class="tenue" data-src="img/galerie-kabyle-blanche.jpg"><img src="img/galerie-kabyle-blanche.jpg" alt="Robe kabyle blanche, ceinture rouge et or" loading="lazy"></button>
+      <button class="tenue" data-src="img/galerie-mariee-voile.jpg"><img src="img/galerie-mariee-voile.jpg" alt="Mariée en robe blanche avec long voile dans la salle" loading="lazy"></button>
+      <button class="tenue" data-src="img/galerie-velours-rouge.jpg"><img src="img/galerie-velours-rouge.jpg" alt="Tenue en velours rouge et or avec coiffe" loading="lazy"></button>
+      <button class="tenue" data-src="img/galerie-sirene-brodee.jpg"><img src="img/galerie-sirene-brodee.jpg" alt="Robe sirène blanche brodée rouge et or" loading="lazy"></button>
+      <button class="tenue" data-src="img/galerie-bleu-nuit-portee.jpg"><img src="img/galerie-bleu-nuit-portee.jpg" alt="Tenue en velours bleu nuit et or portée par une mariée" loading="lazy"></button>
+      <button class="tenue" data-src="img/galerie-rose-poudre.jpg"><img src="img/galerie-rose-poudre.jpg" alt="Caftan rose poudré brodé d'or" loading="lazy"></button>
+      <button class="tenue" data-src="img/galerie-kabyle-miroir.jpg"><img src="img/galerie-kabyle-miroir.jpg" alt="Mariée en tenue kabyle devant un miroir en arche" loading="lazy"></button>
+    </div>
+  </section>
+
+  <!-- Téléphone : le détail -->
+  <section class="detail tel-seul" data-page="tenues" aria-label="Le détail">
+    <figure><img src="img/champagne-detail.jpg" alt="Détail d'un caftan champagne brodé de perles et de fils dorés" loading="lazy"></figure>
+    <div class="detail-texte">
+      <h2>Le détail qui fait la différence.</h2>
+      <p>Perles, broderies, ceintures : chaque tenue se regarde de près.</p>
+      <a class="bouton" href="#contact">Réserver ma date</a>
     </div>
   </section>
 
@@ -92,8 +130,47 @@
     <div class="negafa-photos tel-seul">
       <figure><img src="img/mariee-portrait.jpg" alt="Mariée en caftan doré, couronne et ceinture d'or" loading="lazy"></figure>
       <figure><img src="img/mariee-kabyle.jpg" alt="Mariée en tenue kabyle devant les arches fleuries" loading="lazy"></figure>
+      <figure><img src="img/negafa-kabyle-voile.jpg" alt="Mariée en tenue kabyle avec voile" loading="lazy"></figure>
+      <figure><img src="img/negafa-kabyle-arches.jpg" alt="Mariée kabyle dans un hall aux arches de pierre" loading="lazy"></figure>
     </div>
     <a class="bouton tel-seul" href="#contact">Réserver ma date</a>
+  </section>
+
+
+  <!-- Formules (texte de son post Instagram) -->
+  <section class="formules" data-page="negafa" aria-labelledby="t-formules">
+    <h2 id="t-formules">Trois formules pour le jour J.</h2>
+    <div class="formules-cartes">
+      <article class="formule">
+        <h3>Silver</h3>
+        <ul>
+          <li>2 tenues haut de gamme au choix</li>
+          <li>2 tenues homme assorties</li>
+          <li>Accompagnement en salle</li>
+          <li>Retouches maquillage et coiffure</li>
+        </ul>
+      </article>
+      <article class="formule formule-phare">
+        <h3>Gold</h3>
+        <ul>
+          <li>3 tenues haute couture au choix</li>
+          <li>3 tenues homme assorties</li>
+          <li>Accompagnement en salle</li>
+          <li>Retouches maquillage et coiffure</li>
+        </ul>
+      </article>
+      <article class="formule">
+        <h3>Diamond</h3>
+        <ul>
+          <li>3 tenues haute couture au choix</li>
+          <li>3 tenues homme assorties</li>
+          <li>Accompagnement en salle</li>
+          <li>Changement de coiffure ou de hijab illimité (voiles fournis)</li>
+          <li>Changement de maquillage illimité</li>
+        </ul>
+      </article>
+    </div>
+    <a class="bouton" href="#contact">Réserver ma date</a>
   </section>
 
   <!-- Contact -->
@@ -112,12 +189,19 @@
           <label><input type="checkbox" name="envie" value="Karakou"><span>Karakou</span></label>
           <label><input type="checkbox" name="envie" value="Robe kabyle"><span>Robe kabyle</span></label>
           <label><input type="checkbox" name="envie" value="Négafa le jour J"><span>Négafa le jour J</span></label>
+          <label><input type="checkbox" name="envie" value="Formule Silver"><span>Silver</span></label>
+          <label><input type="checkbox" name="envie" value="Formule Gold"><span>Gold</span></label>
+          <label><input type="checkbox" name="envie" value="Formule Diamond"><span>Diamond</span></label>
         </div>
       </fieldset>
       <label class="large">Un mot de plus<textarea name="message" rows="3" placeholder="Nombre de tenues, couleurs, questions…"></textarea></label>
       <button class="bouton" type="submit">Envoyer sur Instagram</button>
       <p class="aide" id="aide" role="status">Votre message est copié : collez-le dans la conversation qui s'ouvre.</p>
     </form>
+    <div class="direct tel-seul">
+      <p>Vous préférez écrire directement ?</p>
+      <a class="bouton bouton-clair" href="https://ig.me/m/ziana_so_chic" target="_blank" rel="noopener">Écrire sur Instagram</a>
+    </div>
   </section>
 </main>
 
@@ -157,7 +241,7 @@
   <button class="bouton" id="fermer-mentions">Fermer</button>
 </dialog>
 
-<script src="site.js"></script>
+<script src="site.js?v=20261110c"></script>
 <script type="module">
   import { verre } from "./verre-liquide.js";
   verre(".nav");
