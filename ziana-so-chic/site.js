@@ -15,16 +15,33 @@
     if (e.target.tagName === 'A'){ nav.classList.remove('ouvert'); menu.setAttribute('aria-expanded', false); menu.textContent = 'Menu'; }
   });
 
-  // Onglet actif (téléphone)
+  // Téléphone : 4 écrans séparés (Accueil, Tenues, Négafa, Ma date), changés par les onglets du bas
+  var tel = window.matchMedia('(max-width:640px)');
+  var racine = document.documentElement;
   var onglets = document.querySelectorAll('.onglets a');
-  if (onglets.length && 'IntersectionObserver' in window){
-    var ids = ['haut','tenues','negafa','contact'];
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting){ var id = e.target.dataset.onglet;
-        onglets.forEach(function(a){ a.classList.toggle('actif', a.getAttribute('href') === '#' + id); }); } });
-    }, {rootMargin:'-45% 0px -50% 0px'});
-    ids.forEach(function(id){ var el = id === 'haut' ? document.querySelector('.accueil') : document.getElementById(id); if (el){ el.dataset.onglet = id; io.observe(el); } });
+  var ECRANS = ['haut','tenues','negafa','contact'];
+  function ecranDepuisHash(){ var h = location.hash.replace('#',''); return ECRANS.indexOf(h) >= 0 ? h : 'haut'; }
+  function montrer(e, defiler){
+    racine.setAttribute('data-ecran', e);
+    onglets.forEach(function(a){ var on = a.getAttribute('href') === '#' + e; a.classList.toggle('actif', on); if (on) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    if (defiler) window.scrollTo(0, 0);
   }
+  function appliquer(){
+    if (tel.matches){ racine.classList.add('app'); montrer(ecranDepuisHash(), false); }
+    else { racine.classList.remove('app'); racine.removeAttribute('data-ecran'); }
+  }
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+    if (!a || !tel.matches) return;
+    var e = a.getAttribute('href').slice(1);
+    if (ECRANS.indexOf(e) < 0) return;
+    ev.preventDefault();
+    if (location.hash !== '#' + e) history.pushState(null, '', '#' + e);
+    montrer(e, true);
+  });
+  window.addEventListener('popstate', function(){ if (tel.matches) montrer(ecranDepuisHash(), true); });
+  if (tel.addEventListener) tel.addEventListener('change', appliquer);
+  appliquer();
 
   // Visionneuse
   var vis = document.getElementById('visionneuse'), visImg = vis.querySelector('img');

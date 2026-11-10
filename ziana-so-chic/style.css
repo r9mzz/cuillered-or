@@ -176,6 +176,7 @@ dialog::backdrop{background:rgba(35,27,18,.82)}
 
 /* Barre d'onglets (téléphone seulement) */
 .onglets{display:none}
+.tel-seul{display:none!important}
 
 /* ===== Téléphone : mise en page aérée, façon application ===== */
 @media (max-width:640px){
@@ -249,4 +250,24 @@ dialog::backdrop{background:rgba(35,27,18,.82)}
   .mentions{padding:1.5rem 1.25rem}
   .mentions h2{font-size:1.4rem}
   .mentions .bouton{width:100%}
+
+  /* Écrans séparés, comme une application */
+  .tel-seul{display:revert!important}
+  a.bouton.tel-seul{display:flex!important;width:100%}
+  .app [data-page]{display:none!important}
+  .app[data-ecran="haut"] [data-page="haut"],
+  .app[data-ecran="tenues"] [data-page="tenues"],
+  .app[data-ecran="negafa"] [data-page="negafa"],
+  .app[data-ecran="contact"] [data-page="contact"]{display:grid!important;animation:entree .35s ease}
+  .app[data-ecran="tenues"] .tenues{display:block!important}
+  .app[data-ecran="haut"] .accueil{display:grid!important}
+  .app main{min-height:calc(100svh - 12rem)}
+  .app .tenues,.app .negafa,.app .contact{margin-top:4.25rem}
+  .app .tenues{padding-top:0}
+  .negafa-photos{display:grid!important;grid-template-columns:1fr 1fr;gap:.6rem;margin:1.25rem 0}
+  .negafa-photos figure{border-radius:1rem;overflow:hidden;aspect-ratio:3/4}
+  .negafa-photos img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+  .vedette-texte .bouton{margin-top:.5rem}
 }
+@keyframes entree{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.app [data-page]{animation:none!important}}

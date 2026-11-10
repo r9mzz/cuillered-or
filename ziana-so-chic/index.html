@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Inter:opsz,wght@14..32,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script>if(/police=apple/.test(location.search))document.documentElement.classList.add('police-apple')</script>
+<script>(function(d){if(/police=apple/.test(location.search))d.classList.add('police-apple');if(matchMedia('(max-width:640px)').matches){var h=location.hash.slice(1);d.classList.add('app');d.setAttribute('data-ecran',['tenues','negafa','contact'].indexOf(h)>=0?h:'haut')}})(document.documentElement)</script>
 </head>
 <body>
 
@@ -31,7 +31,7 @@
 <main id="haut">
 
   <!-- Accueil : la maquette « beige épuré » -->
-  <section class="accueil">
+  <section class="accueil" data-page="haut">
     <div class="mosaique">
       <figure class="m-grand"><img src="img/mariee-portrait.jpg" alt="Mariée en caftan doré et couronne, habillée par Ziana So Chic" fetchpriority="high"></figure>
       <figure class="m-haut"><img src="img/champagne-detail.jpg" alt="Détail d'un caftan champagne brodé de perles et de fils dorés"></figure>
@@ -45,7 +45,7 @@
   </section>
 
   <!-- Sa devise -->
-  <section class="passion" aria-labelledby="t-passion">
+  <section class="passion" data-page="haut" aria-labelledby="t-passion">
     <div class="passion-texte">
       <h2 id="t-passion">Notre passion à votre service.</h2>
       <p>25 ans de savoir-faire pour des mariages haut de gamme, à Paris et en <span class="nw">Île-de-France</span>.</p>
@@ -55,7 +55,7 @@
   </section>
 
   <!-- Les tenues -->
-  <section class="tenues" id="tenues" aria-labelledby="t-tenues">
+  <section class="tenues" data-page="tenues" id="tenues" aria-labelledby="t-tenues">
     <div class="tenues-tete">
       <h2 id="t-tenues">Une tenue pour chaque tradition.</h2>
       <p>Caftans, karakous et robes kabyles. Touchez une tenue pour la voir en grand.</p>
@@ -71,25 +71,31 @@
   </section>
 
   <!-- Une grande tenue -->
-  <section class="vedette" aria-label="Tenue bleu nuit">
+  <section class="vedette" data-page="tenues" aria-label="Tenue bleu nuit">
     <figure><img src="img/bleu-nuit-grand.jpg" alt="Grande tenue en velours bleu nuit, broderies dorées et traîne, sous le lustre du salon" loading="lazy"></figure>
     <div class="vedette-texte">
       <h2>La haute couture, jusqu'au dernier détail.</h2>
       <p>Velours, broderies dorées, perles et traînes.</p>
+      <a class="bouton tel-seul" href="#contact">Réserver ma date</a>
     </div>
   </section>
 
   <!-- La négafa -->
-  <section class="negafa" id="negafa" aria-labelledby="t-negafa">
+  <section class="negafa" data-page="negafa" id="negafa" aria-labelledby="t-negafa">
     <h2 id="t-negafa">La négafa, le jour de votre mariage.</h2>
     <div class="negafa-texte">
       <p>Le jour J, nous vous habillons et nous vous accompagnons à chaque changement de tenue, du caftan à la robe kabyle.</p>
       <p class="lieux">Paris, <span class="nw">Île-de-France</span> et Yvelines.</p>
     </div>
+    <div class="negafa-photos tel-seul">
+      <figure><img src="img/mariee-portrait.jpg" alt="Mariée en caftan doré, couronne et ceinture d'or" loading="lazy"></figure>
+      <figure><img src="img/mariee-kabyle.jpg" alt="Mariée en tenue kabyle devant les arches fleuries" loading="lazy"></figure>
+    </div>
+    <a class="bouton tel-seul" href="#contact">Réserver ma date</a>
   </section>
 
   <!-- Contact -->
-  <section class="contact" id="contact" aria-labelledby="t-contact">
+  <section class="contact" data-page="contact" id="contact" aria-labelledby="t-contact">
     <div class="contact-tete">
       <h2 id="t-contact">Réservez votre date.</h2>
       <p>Dites-nous la date et ce qui vous plaît, on vous répond sur Instagram.</p>
