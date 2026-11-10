@@ -15,6 +15,17 @@
     if (e.target.tagName === 'A'){ nav.classList.remove('ouvert'); menu.setAttribute('aria-expanded', false); menu.textContent = 'Menu'; }
   });
 
+  // Onglet actif (téléphone)
+  var onglets = document.querySelectorAll('.onglets a');
+  if (onglets.length && 'IntersectionObserver' in window){
+    var ids = ['haut','tenues','negafa','contact'];
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ var id = e.target.dataset.onglet;
+        onglets.forEach(function(a){ a.classList.toggle('actif', a.getAttribute('href') === '#' + id); }); } });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    ids.forEach(function(id){ var el = id === 'haut' ? document.querySelector('.accueil') : document.getElementById(id); if (el){ el.dataset.onglet = id; io.observe(el); } });
+  }
+
   // Visionneuse
   var vis = document.getElementById('visionneuse'), visImg = vis.querySelector('img');
   document.querySelectorAll('.tenue').forEach(function(b){
